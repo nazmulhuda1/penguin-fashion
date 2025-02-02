@@ -9,6 +9,8 @@
 }
 body {
   scroll-behavior: smooth;
+  color: #3c3c3c;
+  background: #ffffff;
 }
 h1,
 h2,
@@ -16,15 +18,239 @@ h3,
 h4 {
   font-family: "Bebas Neue", serif;
 }
+p {
+  color: #3e3e3e;
+}
 .header-section {
   padding: 20px 9%;
   align-items: center;
   display: flex;
   justify-content: center;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  transition: 0.6s;
 }
-
+.header-section.sticky {
+  background: #fffbf0;
+  box-shadow: 0px 0px 20px #ddd;
+  padding: 0px 9%;
+}
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  position: relative;
+  height: 70px;
+}
+img.logo {
+  width: 250px;
+  height: 40px;
+}
+
+ul.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+ul.menu li a {
+  color: #000;
+  font-size: 20px;
+  transition: 0.6s;
+}
+ul.menu li a:hover {
+  color: #85a019;
+}
+.menu-icon i {
+  font-size: 30px;
+  color: #85a019;
+  cursor: pointer;
+}
+.menu-icon {
+  display: none;
+}
+
+/* ================ */
+.section {
+  padding: 100px 9% 50px;
+}
+.hero-section {
+  background-image: url(./images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.hero-text h1,
+.hero-text h1 span {
+  font-family: "Bebas Neue", serif;
+  font-size: 100px;
+  font-weight: 900;
+}
+.hero-text h1 span {
+  color: #fabe4c;
+}
+.hero-text p {
+  width: 60%;
+  color: #3e3e3e;
+}
+button.btn {
+  padding: 10px 25px;
+  color: #fff;
+  background: linear-gradient(to bottom, #a4bc46, #85a019);
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image img {
+  width: 500px;
+  margin-top: -170px;
+}
+/* ============== */
+.wrapper-jacket {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  gap: 30px;
+}
+.section-title {
+  margin-bottom: 30px;
+}
+.jacket-box {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.jacket-img {
+  background: #f1f1f1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 20px;
+}
+.jacket-img img {
+  max-height: 290px;
+}
+.jacket-text {
+  margin-top: 15px;
+}
+.jacket-text h2 {
+  font-family: "Roboto", serif;
+}
+.jacket-text p {
+  margin: 12px 0;
+  color: #3e3e3e;
+}
+.footer-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-card span {
+  font-size: 36px;
+  color: #fabe4c;
+  font-weight: 600;
+}
+.footer-card button.btn {
+  margin-top: 5px;
+}
+
+/* ======== MQ section ======= */
+@media (max-width: 1280px) {
+  .hero-text h1,
+  .hero-text h1 span {
+    font-size: 70px;
+  }
+  .hero-image img {
+    width: 450px;
+    margin-top: -150px;
+  }
+}
+@media (max-width: 1080px) {
+  .hero-text h1,
+  .hero-text h1 span {
+    font-size: 60px;
+  }
+  .hero-image img {
+    width: 400px;
+    margin-top: -100px;
+  }
+}
+@media (max-width: 900px) {
+  .menu-icon {
+    display: flex;
+  }
+  ul.menu {
+    flex-direction: column;
+    align-items: center;
+    background-color: #85a019;
+    width: 100%;
+    position: absolute;
+    left: -200%;
+    top: 100%;
+    padding: 30px 10px;
+    height: 300px;
+    transition: 0.6s;
+  }
+  ul.menu.active {
+    left: 0;
+  }
+  ul.menu li a {
+    color: #fff;
+  }
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .hero-image img {
+    width: auto;
+  }
+  .hero-text p {
+    width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .hero-text h1,
+  .hero-text h1 span {
+    font-size: 50px;
+  }
+}
+@media (max-width: 500px) {
 }
